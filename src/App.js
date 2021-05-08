@@ -44,8 +44,6 @@ function App() {
     }
   }
 
-  const fetchPost = async (post)
-
   useEffect(() => {
     fetchData();
     
