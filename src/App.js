@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect, useHistory} from 'react-router-dom';
 
 
 import Nav from './components/support/nav';
@@ -17,21 +17,7 @@ function App() {
   const [post, setPost] = useState([]);
   const [comments, setComments] = useState([]);
 
-  const handleSubChange = (e) => { 
-    setSubreddit(e.target.value.toLowerCase());
-    console.log(subreddit);
-    
-  }
 
-  const handleEnter = (e) =>{
-    console.log(e.nativeEvent);
-    if(e.key === "Enter"){
-        //trigger search
-        console.log("MMMMM EGG")
-        fetchData();
-
-    }
-  }
     
   const fetchPost = async(postId) => {
     setPost("");
@@ -99,7 +85,7 @@ function App() {
     <Router>
       <div className="App">
 
-        <Nav subreddit = {subreddit} handleChange = {handleSubChange} handleEnter = {handleEnter}/>
+        <Nav subreddit = {subreddit} setSubreddit = {setSubreddit} fetchData = {fetchData}/>
 
         <Redirect from = '/' to = '/home'></Redirect>
 
