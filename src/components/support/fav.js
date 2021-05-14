@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import FavItem from './favItem';
 
 
-export default function Fav(props){
+export function Fav(props){
 
     return(
         <div className = "favMenu">
@@ -14,6 +13,22 @@ export default function Fav(props){
 
         </div>
 
+    )
+
+}
+
+export function FavItem(props){
+
+    return(
+        <div className = "favourite">
+            <div onClick = {() => props.reDirect(props.subreddit)}>
+                <h1 >r/{props.subreddit}</h1> 
+                {/*cannot pass a function with properties straight into an onClick */}
+             </div>
+            <button onClick = {() => props.remove(props.subreddit)}>X</button>
+        </div>
+        
+        
     )
 
 }

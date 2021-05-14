@@ -6,7 +6,7 @@ import Nav from './components/support/nav';
 import Subreddit from './components/subreddit';
 import Post from './components/post';
 
-import Fav from './components/support/fav';
+import {Fav} from './components/support/fav';
 import SubBar from './components/support/subBar';
 import Article from './components/support/Article';
 
