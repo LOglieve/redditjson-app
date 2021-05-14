@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
 
-import Comment from './support/comment';
+
 
 export default function Post(props){
 
@@ -35,4 +35,18 @@ export default function Post(props){
         </div>
         
     )
+}
+
+function Comment(props){
+
+    return(
+        <div className = "comment">
+            <p>{props.comment.body}</p>
+            <h6></h6>
+            
+
+        </div>
+
+    )
+
 }
