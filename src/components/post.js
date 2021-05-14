@@ -17,10 +17,12 @@ export default function Post(props){
     return(
         <div className = "content">
             
-            <div className = "main">
+            <div className = "post">
                 <h1>{props.post.title}</h1>
-                <p></p>
-                <img src = {props.post.url}/>
+                <p>{props.post.body}</p>
+
+                {(props.post.url != null) ? <img id = "post-image" src = {props.post.url} max/> : "" }
+                
             </div>
             <div className = "comments">
 
