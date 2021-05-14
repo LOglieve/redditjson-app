@@ -17,7 +17,7 @@ export function Fav(props){
 
 }
 
-export function FavItem(props){
+function FavItem(props){
 
     return(
         <div className = "favourite">

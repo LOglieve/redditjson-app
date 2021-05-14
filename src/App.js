@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 
 
 import Nav from './components/support/nav';
-import Subreddit from './components/subreddit';
 import Post from './components/post';
 
 import {Fav} from './components/support/fav';
