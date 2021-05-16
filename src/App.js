@@ -71,42 +71,37 @@ function App() {
     setFavList(favs); 
   };
 
-  //display selected favourite subreddit to user
-  const reDirectToFav = (favSub) =>{
-    fetchData(favSub);
-    setSubreddit(favSub);
-    console.log(subreddit);
 
-  }
 
   return (
 
 
     <Router>
+      <Redirect from = '/' to = '/home'></Redirect>
       <div className="App">
 
         <Nav subreddit = {subreddit} setSubreddit = {setSubreddit} fetchData = {fetchData}/>
 
-        <Redirect from = '/' to = '/home'></Redirect>
-
         <div className = "main">
-            <Fav className = "favMenu" list = {favList} remove = {removeItem} reDirect = {reDirectToFav}/>
-            <Route path = "/home">
+            <Fav className = "favMenu" list = {favList} remove = {removeItem} subreddit = {subreddit} setSubreddit = {setSubreddit} fetchData = {fetchData}/>
+           
 
-              <div className = "content">
-                
-                <SubBar subreddit = {subreddit} fetchData = {fetchData} />
-                  <div className = "articles">
-                    {
-                    (articles != null) ? articles.map((article, index) => <Article key = {index} article = {article.data} />) : <h2>This subreddit does not exist</h2>
-                    }
-                  </div>
+            	<div className = "content">
+				<SubBar subreddit = {subreddit} fetchData = {fetchData} />
+					<Route path = "/home">
+						<div className = "articles">
+							{
+							(articles != null) ? articles.map((article, index) => <Article key = {index} article = {article.data} />) : <h2>This subreddit does not exist</h2>
+							}
+						</div>
+					</Route>
+
+					<Route path = "/post/:postId"><Post fetchPost = {fetchPost} post = {post} comments = {comments}/></Route>
 
                  
-                 </div>
-            </Route>
-
-            <Route path = "/post/:postId"><Post fetchPost = {fetchPost} post = {post} comments = {comments}/></Route>
+                </div>
+            
+           
                 
 
         </div>

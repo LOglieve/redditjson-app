@@ -12,10 +12,15 @@ export default function SubBar(props){
     }
     return(
         <div className = "subBar">
-            <div><h1>{props.subreddit}</h1></div>
-            <button onClick = {() => props.fetchData(props.subreddit, "/hot")}>Hot</button>
-            <button onClick = {() => props.fetchData(props.subreddit, "/new")}>New</button>
-            <button onClick = {() => props.fetchData(props.subreddit, `/top`)}>Top</button>
+            <div><h1>r/{props.subreddit}</h1></div>
+            {
+                (window.location.href.indexOf("home") !== -1) ? <div className = "sort-by">
+                    <button onClick = {() => props.fetchData(props.subreddit, "/hot")}>Hot</button>
+                    <button onClick = {() => props.fetchData(props.subreddit, "/new")}>New</button>
+                    <button onClick = {() => props.fetchData(props.subreddit, `/top`)}>Top</button>
+                </div> : ""
+            }
+            
             
             {/*
             json api doesnt seem to allow top/?t=day etc find fix

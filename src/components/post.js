@@ -13,6 +13,8 @@ export default function Post(props){
         
     }, [])
 
+    console.log(props.comments);
+
 
     return(
         <div className = "content">
@@ -25,6 +27,7 @@ export default function Post(props){
                 
             </div>
             <div className = "comments">
+                <h1>Comments {props.comments.length}</h1>
 
                 {
                     (props.comments != null) ? props.comments.map((comment, index) => <Comment key = {index} comment = {comment.data} />) : <h2>No comments availible</h2>

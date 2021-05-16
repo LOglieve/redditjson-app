@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useHistory } from "react-router-dom";
+import logo from "../../resources/logo.png";
 
 export default function Nav(props){
     let history = useHistory();
@@ -27,8 +28,13 @@ export default function Nav(props){
 
     return(
         <div className = "navBar">
-            <img onClick = {home} src = "../resources/logo" id = "logo" alt = "logo" />
-            <input id = "searchBar" type="text" className= "input" value = {props.subreddit} onKeyPress= {handleEnter} onChange = {handleSubChange}></input>
+            <div>
+                <img onClick = {home} src = {logo} id = "logo" alt = "logo" />
+            </div>
+            <div>
+                <input id = "search-bar" type="text" className= "input" value = {props.subreddit} onKeyPress= {handleEnter} onChange = {handleSubChange}></input>
+            </div>
+            
             
         </div>
 

@@ -24,10 +24,15 @@ const getSub = () => {
 const subreddit = (subInitialState, action) => {
     switch(action.type){
         case 'GET-SUBREDDIT':
-            return 
+            return;
+        case 'CHANGE-SUBREDDIT':
+            return;
     }
 
 }
+
+
+
 
 //STORE
 let store = createStore(reducer);

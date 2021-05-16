@@ -8,6 +8,7 @@ export default function Article(props){
             <article className = "article">
 
                <h3>{props.article.title}</h3>
+               <p>{props.article.selftext}</p>
              
 
                 {
