@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 
 export default function SubBar(props){
-    const [timeFrame, setTimeFrame] = useState("day");
+    //const [timeFrame, setTimeFrame] = useState("day");
 
-    const getSelected = () =>{
-        const drop = document.getElementById("time");
-        const selected = drop.options[drop.selectedIndex].value;
-        console.log(selected);
-        setTimeFrame(selected);
+    //part of top selection
+    // const getSelected = () =>{
+    //     const drop = document.getElementById("time");
+    //     const selected = drop.options[drop.selectedIndex].value;
+    //     console.log(selected);
+    //     setTimeFrame(selected);
 
-    }
+    // }
+
     return(
         <div className = "subBar">
             <div><h1>r/{props.subreddit}</h1></div>
@@ -21,6 +23,7 @@ export default function SubBar(props){
                 </div> : ""
             }
             
+            <button onClick = {() => props.addToFav(props.subreddit)}></button>
             
             {/*
             json api doesnt seem to allow top/?t=day etc find fix

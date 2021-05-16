@@ -58,6 +58,15 @@ function App() {
     }
   }
 
+  const addToFav = (newFav) =>{
+	  let contained = favList.filter(fav => fav === newFav);
+	  console.log(contained);
+	  if(contained.length === 0){
+		setFavList(favList.concat(newFav));
+	  }
+	  
+  }
+
   useEffect(() => {
     fetchData();
     
@@ -83,11 +92,11 @@ function App() {
         <Nav subreddit = {subreddit} setSubreddit = {setSubreddit} fetchData = {fetchData}/>
 
         <div className = "main">
-            <Fav className = "favMenu" list = {favList} remove = {removeItem} subreddit = {subreddit} setSubreddit = {setSubreddit} fetchData = {fetchData}/>
+            <Fav className = "favMenu" list = {favList} remove = {removeItem} subreddit = {subreddit} setSubreddit = {setSubreddit} fetchData = {fetchData} />
            
 
             	<div className = "content">
-				<SubBar subreddit = {subreddit} fetchData = {fetchData} />
+				<SubBar subreddit = {subreddit} fetchData = {fetchData} addToFav = {addToFav}/>
 					<Route path = "/home">
 						<div className = "articles">
 							{
