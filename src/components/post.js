@@ -21,7 +21,7 @@ export default function Post(props){
             
             <div className = "post">
                 <h1>{props.post.title}</h1>
-                <p>{props.post.body}</p>
+                <p>{props.post.selftext}</p>
 
                 {(props.post.url != null) ? <img id = "post-image" src = {props.post.url} max/> : "" }
                 

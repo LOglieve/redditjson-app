@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
+import { useHistory } from "react-router-dom";
 
 
 export function Fav(props){
+    let history = useHistory();
 
       //display selected favourite subreddit to user
     const reDirectToFav = async(favSub) =>{
+        history.push("/home");
         console.log(favSub);
-        await props.setSubreddit(favSub);
-        await props.fetchData(favSub);
+        props.setSubreddit(favSub);
+        props.fetchData(favSub);
         
 
     }
