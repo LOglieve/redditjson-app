@@ -28,10 +28,10 @@ export default function Nav(props){
 
     return(
         <div className = "navBar">
-            <div>
+            <div className = 'light-grey' >
                 <img onClick = {home} src = {logo} id = "logo" alt = "logo" />
             </div>
-            <div>
+            <div className = 'light-grey'>
                 <input id = "search-bar" type="text" className= "input" value = {props.subreddit} onKeyPress= {handleEnter} onChange = {handleSubChange}></input>
             </div>
             

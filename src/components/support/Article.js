@@ -7,8 +7,8 @@ export default function Article(props){
         <Link to = {`/post/${props.article.id}`}>
             <article className = "article">
 
-               <h3>{props.article.title}</h3>
-               <p>{props.article.selftext}</p>
+               <h3 className = 'light-grey'>{props.article.title}</h3>
+               <p className = 'light-grey'>{props.article.selftext}</p>
              
 
                 {
